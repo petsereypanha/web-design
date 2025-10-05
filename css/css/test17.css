@@ -1,0 +1,28 @@
+.box1{
+    /* text-align: center; */
+    /* text-align: right; */
+    text-align: left;
+    text-indent: 100px;
+    /* letter-spacing: 20px; */
+    line-height: 22px;
+    word-spacing: 10px;
+    text-shadow: 50px 10px chartreuse;
+}
+ul{
+    height: 20px;
+    background-color: rgba(44, 43, 43, 0.528);
+    display: flex;
+}
+ul li a{
+    text-decoration: none; 
+}
+ul li {
+    display: block;
+    width: 100px;
+}
+ul li:hover{
+    background-color: yellow;
+}
+ul li a:hover{
+    color: blue;
+}

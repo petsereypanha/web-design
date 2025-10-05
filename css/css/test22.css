@@ -1,0 +1,25 @@
+.box{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: blue;
+    animation: box   5s infinite;
+                /* name time number/infinite(ever)  */
+    /* animation-duration: normal; */
+    /* animation-duration: reverse; */
+    /* animation-fill-mode: forwards;  */
+    /* animation-fill-mode: both; */
+    /* animation-fill-mode: none; */
+    animation-play-state: running;
+}
+.box:hover{
+    animation-play-state: paused;
+}
+@keyframes box {
+    from{ left:0 ;}
+    to{ left: 90%;}
+    10%{background-color: red;}
+    40%{background-color: hotpink;width: 400px; height: 300px;}
+    70%{background-color: tan;}
+    
+}

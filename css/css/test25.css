@@ -1,0 +1,153 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Hanuman', serif;
+}
+.main{
+    width: 900px;
+    height: 800px;
+    border: 2px solid black;
+}
+.header{
+    width: 100%;
+    height: 100px;
+    /* background-color: blue; */
+}
+.navbar{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(223, 222, 222);
+}
+.contener{
+    width: 100%;
+    height: 450px;
+    /* background-color: hotpink; */
+    display: flex;
+}
+.footer{
+    width: 100%;
+    height: 150px;
+    background-color: lawngreen;
+}
+.header img{
+    width: 100%;
+    height: 100%;
+}
+.navbar nav{
+    display: flex;
+    justify-content: space-between;
+}
+.navbar .left{
+    display: flex; 
+}
+.navbar .left li{
+    display: block;
+    margin-left: 60px;
+    margin-top: 35px;
+    transition: 1.5s;
+}
+.navbar .left li:hover{
+    transition: 1.2s;
+    transform: scale(1.35);
+}
+.navbar .left a{
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(46, 59, 61);
+    transition: 1.2s;
+}
+.navbar .left a:hover{
+    transition: 1.2s;
+    color: rgb(38, 120, 228);
+}
+.navbar .rigth{
+    display: flex;
+}
+.navbar .rigth li{
+    display: block;
+    margin-right: 40px;
+    margin-top: 35px;
+}
+.navbar .rigth li:hover{
+    transition: 1.2s;
+    transform: scale(1.35);
+}
+.navbar .rigth a{
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: none;
+    color: rgb(46, 59, 61);
+    transition: 1.5s;
+}
+.navbar .rigth a:hover{
+    transition: 1.2s;
+    color: rgb(38, 120, 228);
+}
+.contener .box1{
+    width: 25%;
+    height: 100%;
+    /* background-color: gold; */
+}
+.contener .box2{
+    width: 50%;
+    height: 100%;
+    /* background-color: rgb(249, 10, 89); */
+}
+.contener .box3{
+    width: 25%;
+    height: 100%;
+    /* background-color: rgb(0, 255, 123); */
+}
+.contener .box1 iframe{
+    width: 100%;
+    margin-top: 70px;
+}
+.contener .box3 iframe{
+    margin-top: 70px;
+    width: 100%;
+}
+.contener .box2 .b_top{
+    width: 100%;
+    height: 20%;
+    /* background-color: indianred; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contener .box2 .b_center{
+    margin-left: 5%;
+    width: 90%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contener .box2 .b_center p{
+    font-size: 20px;
+    font-weight: 400;
+}
+.contener .box2 .b_bottom{
+    margin-left: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+    height: 40%;
+    /* background-color: salmon; */
+}
+.contener .box2 .b_bottom img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 2s;
+}
+.contener .box2 .b_bottom img:hover{
+    transform: scale(1.1);
+    transition: 2s;
+}

@@ -1,0 +1,24 @@
+.box{
+    width: 700px;
+    height: 2000px;
+    background-color: hotpink;
+}
+.box1{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(68, 105, 238);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+#box{
+    width: 700px;
+    height: 900px;
+    transition: 1s;
+    background-color: fuchsia;
+}
+#box:hover{
+    transform: scale(0.3);
+    transition: .8s;
+    background-color: rgb(51, 255, 0);
+}

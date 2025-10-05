@@ -1,0 +1,14 @@
+.main{
+    width: 400px;
+    height: 300px;
+    border: 2px solid rgb(0, 0, 0);
+    overflow: auto;
+    /* overflow: scroll; */
+    /* overflow: hidden; */
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    position: fixed;
+}

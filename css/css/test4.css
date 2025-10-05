@@ -1,0 +1,12 @@
+.p1{
+    color: green; 
+}
+.p2{
+    color: rgb(125, 24, 226); /* RGB */
+}
+.p3{
+    color: #6ae926; /* hex */
+}
+.p4{
+    color: hsl(147, 50%, 30%);/* HSL */
+}
