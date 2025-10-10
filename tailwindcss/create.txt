@@ -1,0 +1,13 @@
+1-  npm init  (use to create package.json)
+2-  npm install -D tailwindcss  (use to create node_modules and package_lock.json)
+        if(error){
+            - npm install -g npm@9.6.4   (it use to update npm )
+        }
+3-  npx tailwindcss init (use to create tailwind config)
+4-  create folder src ( in src create file input.css)
+5-  create folder public ( in public create file output.css)
+6-  config tailwind with file html and js
+          content: ["public/*.{html,js}"]
+7-  we  write [ @tailwind base; @tailwind components; @tailwind utilities; ] in file input.css
+8-  we  write "watch-css": "npx tailwindcss -i ./src/input.css -o ./public/output.css --watch" in package.json 
+    and write in "scripts" object

@@ -1,0 +1,32 @@
+:root{
+    --red : #ed1c24;
+    --gray : #5e5e5c;
+    --white : #ffffff;
+}
+li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    height: 2.5rem;
+    color: var(--white);
+    position: relative;
+}
+nav .hover::before{
+    content: "";
+    height: 0.25rem;
+    width: 0;
+    bottom: 0;
+    background:  var(--red);
+    position: absolute;
+    transition: 0.5s ease-in;
+}
+nav .hover::after{
+    content: "";
+    height: 0.25rem;
+    width: 0;
+    bottom: 0;
+    background:  var(--gray);
+    position: absolute;
+    transition: 0.5s ease-in;
+}
