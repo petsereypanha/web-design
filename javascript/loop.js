@@ -59,3 +59,42 @@ function check(arr){
 let result = arr.filter(check);
 
 console.log(result);
+
+console.log("================| For Loop  |===================");
+
+var arr = ["Sok","Dara","Kaka","Jon"];
+for(var i=0; i<arr.length;i++){
+    console.log("Arrays ["+i+"] :"+arr[i]);
+}
+
+console.log("================| While Loop  |===================");
+var i =0;
+while(i<arr.length){
+    console.log("Arrays ["+i+"] :"+arr[i]);
+    i++;
+}
+
+console.log("================| do While Loop  |===================");
+var i =0;
+do{
+    console.log("Arrays ["+i+"] :"+arr[i]);
+    i++;
+}while(i<arr.length);
+console.log("================| for in Loop  |===================");
+for(var i in arr){
+    console.log(arr[i]);
+}
+console.log("================| for of Loop  |===================");
+for(var i of arr){
+    console.log(i);
+}
+console.log("================| Map Loop  |===================");
+arr.map((items,index) => {
+    console.log(index +" "+ items)
+})
+console.log("================| for Each Loop  |===================");
+arr.forEach(
+    items => {
+        console.log(items)
+    }
+)
