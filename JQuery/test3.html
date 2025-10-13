@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        width: 100px;
+        height: 40px;
+    }
+    div{
+        width: 500px;
+        height: 400px;
+        background-color: #da2424;
+        animation: bar 4s;
+    }
+</style>
+<body>
+    <button class="btn">BTN</button>
+    <div class="box">
+        <p>Lorem ipsum dolor sit amet consectetu. Excepturi hic eum maxime distinctio ipsam? Doloribus fuga incidunt quod dignissimos?</p>
+        <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ut rerum deleniti delectus asperiores impedit doloremque aspernatur dolorem alias nulla.</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function(){
+            $('.btn').click(()=>{
+                // $('.box').remove();
+                $('.box').empty();
+                
+            })
+        })
+    </script>
+</body>
+</html>
