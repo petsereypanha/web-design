@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/output.css">
+</head>
+<style>
+    .table {
+        border-spacing: 0 15px;
+    }
+
+    i {
+        font-size: 1rem !important;
+    }
+
+    .table tr {
+        border-radius: 20px;
+    }
+
+    tr td:nth-child(n+7),
+    tr th:nth-child(n+7) {
+        border-radius: 0 .625rem .625rem 0;
+    }
+
+    tr td:nth-child(1),
+    tr th:nth-child(1) {
+        border-radius: .625rem 0 0 .625rem;
+    }
+    /* messages */
+    .updatemsg,
+    .deletemsg,
+    .insertmsg {
+        position: absolute;
+        top: -40px;
+    }
+
+    .movedown {
+        animation: slideup 3.4s ease;
+    }
+
+    @keyframes slideup {
+        50% {
+            top: 0
+        }
+
+        100% {
+            top: -40px;
+        }
+    }
+</style>
+<body>
+    <div class="flex justify-center pt-16 bg-slate-700 h-[65rem]">
+        <!-- component -->
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-slate-700 overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 bg-slate-700 border-b border-gray-200">
+                        <form method="POST" action="action.php">
+                            <div class="mb-4 relative h-10 w-full min-w-[300px]">
+                                <input id="userid"
+                                    class="peer h-full w-[530px] rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-lg font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                                    placeholder=" "
+                                  />
+                                  <label class="before:content[' '] text-white after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                                    Number
+                                  </label>
+                            </div>
+                            <div class="flex w-72 flex-col gap-6 ">
+                                <div class="flex ">
+                                    <div class="relative h-11 w-full min-w-[235px]">
+                                        <input id="userFirst"
+                                          class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-lg font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-pink-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                                          placeholder=" "
+                                        />
+                                        <label class="after:content[' '] text-white pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-pink-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-lg peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:after:scale-x-100 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                                          First Name
+                                        </label>
+                                      </div>
+                                      <div class="relative h-11 w-full min-w-[235px] ml-16">
+                                        <input id="userLast"
+                                          class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-lg font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-pink-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                                          placeholder=" "
+                                        />
+                                        <label class="after:content[' '] text-white pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-pink-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-lg peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:after:scale-x-100 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                                          Last Name
+                                        </label>
+                                      </div>
+                                </div>
+                                <div class="relative h-10 w-full min-w-[533px]">
+                                    <div class="py-2 min-w-[533px]" x-data="{ show: true }">
+                                        <div class="relative">
+                                          <input id="userPassword" placeholder=" " :type="show ? 'password' : 'text'" class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-lg font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                                          >
+                                          <label class="before:content[' '] text-white after:content[' '] pointer-events-none absolute left-0 -top-1.5 h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border
+                                           after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2
+                                            peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500
+                                            text-md flex rounded-lg  placeholder-gray-600 shadow-md">
+                                            Password
+                                          </label>
+                                          <div class="text-white absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+
+                                                <svg class="h-6 " fill="none" @click="show = !show"
+                                                :class="{'hidden': !show, 'block':show }" xmlns="http://www.w3.org/2000/svg"
+                                                viewbox="0 0 576 512">
+                                                <path fill="currentColor"
+                                                    d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z">
+                                                </path>
+                                                </svg>
+
+                                                <svg class="h-6 " fill="none" @click="show = !show"
+                                                :class="{'block': !show, 'hidden':show }" xmlns="http://www.w3.org/2000/svg"
+                                                viewbox="0 0 640 512">
+                                                <path fill="currentColor"
+                                                    d="M320 400c-75.85 0-137.25-58.71-142.9-133.11L72.2 185.82c-13.79 17.3-26.48 35.59-36.72 55.59a32.35 32.35 0 0 0 0 29.19C89.71 376.41 197.07 448 320 448c26.91 0 52.87-4 77.89-10.46L346 397.39a144.13 144.13 0 0 1-26 2.61zm313.82 58.1l-110.55-85.44a331.25 331.25 0 0 0 81.25-102.07 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64a308.15 308.15 0 0 0-147.32 37.7L45.46 3.37A16 16 0 0 0 23 6.18L3.37 31.45A16 16 0 0 0 6.18 53.9l588.36 454.73a16 16 0 0 0 22.46-2.81l19.64-25.27a16 16 0 0 0-2.82-22.45zm-183.72-142l-39.3-30.38A94.75 94.75 0 0 0 416 256a94.76 94.76 0 0 0-121.31-92.21A47.65 47.65 0 0 1 304 192a46.64 46.64 0 0 1-1.54 10l-73.61-56.89A142.31 142.31 0 0 1 320 112a143.92 143.92 0 0 1 144 144c0 21.63-5.29 41.79-13.9 60.11z">
+                                                </path>
+                                                </svg>
+
+                                          </div>
+
+                                        </div>
+
+                                </div>
+                            </div>
+                            <div class="my-4 relative h-10 w-full min-w-[533px]">
+                                <input id="userTitle"
+                                    class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-lg font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                                    placeholder=" "
+                                  />
+                                  <label class="before:content[' '] text-white after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                                    Title
+                                  </label>
+                            </div>
+
+                            <div class="mb-4 relative h-10 w-full min-w-[533px]">
+                                <input id="userDescription"
+                                    class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-lg font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                                    placeholder=" "
+                                  />
+                                  <label class="before:content[' '] text-white after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                                    Description
+                                  </label>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="flex p-1 min-w-[532px] justify-center">
+                        <button  id="create" class="bg-transparent duration-500 hover:bg-emerald-500 text-emerald-500 font-semibold hover:text-white py-2 px-4 border border-emerald-500 hover:border-transparent rounded">
+                            Create
+                        </button>
+                        <button  id="read" class="ml-4 bg-transparent duration-500 hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                            Read
+                        </button>
+                        <button  id="update" class="ml-4 bg-transparent duration-700 hover:bg-yellow-500 text-yellow-500 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">
+                            Update
+                        </button>
+                        <button  id="delete" class="ml-4 bg-transparent duration-700 hover:bg-red-500 text-red-500 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- component -->
+            <div class="flex items-center justify-center ">
+            <div class="col-span-12">
+                <div class="overflow-auto lg:overflow-visible ">
+                    <table class="table text-gray-400 border-separate space-y-6 text-sm">
+                        <thead class="bg-gray-800 text-gray-200">
+                            <tr>
+                                <th class="p-3">ID</th>
+                                <th class="p-3 text-left">FirstName</th>
+                                <th class="p-3 text-left">LastName</th>
+                                <th class="p-3 text-left">Password</th>
+                                <th class="p-3 text-left">Title</th>
+                                <th class="p-3 text-left">Description</th>
+                                <th class="p-3 ">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-gray-800">
+                                <td class="p-3">
+                                    33
+                                </td>
+                                <td class="p-3">
+                                    Serey
+                                </td>
+                                <td class="p-3">
+                                    Panha
+                                </td>
+                                <td class="p-3 font-bold">
+                                    hello@4565
+                                </td>
+                                <td class="p-3">
+                                    <span class="bg-green-400 text-gray-50 rounded-md px-2">Good</span>
+                                </td>
+                                <td class="p-3">
+                                    Technology
+                                </td>
+                                <td class="p-3 ">
+                                    <a href="#" class="text-gray-400 hover:text-gray-100  mx-2">
+                                        <i class="material-icons-outlined text-base">edit</i>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-gray-100  ml-2">
+                                        <i class="material-icons-round text-base">delete_outline</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+         </div>
+         <div id="notfound" class="text-center"></div>
+    </div>
+     <!-- Labels -->
+     <div class="w-full  text-center text-white bg-emerald-500 insertmsg">Data Inserted Successfully...!</div>
+     <div class="w-full  text-center bg-yellow-500 updatemsg">Data Updated..! Refresh Database To See Result</div>
+     <div class="w-full  text-center text-white bg-red-500 deletemsg">Data Deleted..!</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'content' );
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<!-- Link DataBase Dexie -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dexie/3.2.4/dexie.min.js"></script>
+<!-- Javascript mian -->
+<script src="./main.js" type="module"></script>
+<script src="./module.js"></script>
+</body>
+</html>
